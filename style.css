@@ -1,0 +1,51 @@
+.header{
+    background-color: rgb(37, 34, 34);
+    text-align: center;
+    color: white;
+    font-family: 'Ramabhadra', sans-serif;
+    border-radius: 25px;
+}
+#lista-usuarios{
+    font-family: 'Ramabhadra', sans-serif;
+    columns: 3 350px;
+    column-gap: 150px;
+    background-color: gray;
+    color: white;
+}
+.nombre{
+    font-size: 28px;
+    font-display: inherit;
+    display: inline-block;
+    width: 367px;
+    height: 41px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+
+}
+.precio{
+    border: 2px solid rgb(89, 207, 233);
+    border-radius: 5px;
+    width: 125px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+}
+.descripcion{
+    border: 2px solid rgb(89, 207, 233);
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 5px solid black;
+    border-style: solid;
+}

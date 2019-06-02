@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ramabhadra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Tienda en Línea</title>
+</head>
+<body>
+    <div class="header">
+    <h1>Tienda en Línea</h1>
+    <button id="btn-get-users" value="Load Data">Obtener Productos</button><br><br><br>
+    </div>
+<div class="col-md-12">
+    <div id="lista-usuarios" class="col-md-12"></div>
+</div>
+</body>
+
+<script>
+$(document).ready(function() {
+           
+           $("#btn-get-users").click(function(result){
+              $.getJSON('https://mini-shop-rg.herokuapp.com/products', function(result) {
+                var divListaUsuarios = $("#lista-usuarios");
+                console.log(result);
+                var collectionUsers = result;
+                var newElement = "";
+                for (var i = 0; i < collectionUsers.length; i++) {
+                var user = collectionUsers[i];
+        
+
+                 $('#lista-usuarios').append('<p class="nombre">' + user.name + '</p><br>');
+                 $('#lista-usuarios').append('<p class="precio">Price:$ ' + user.price+ '</p>').css("color", "aqua");
+                 $('#lista-usuarios').append('<p class="descripcion"> Description: ' + user.description+ '</p>');
+                 $('#lista-usuarios').append("<img src=" + user.image +" /><hr>");
+                }
+                
+                });
+                
+           });
+            
+        });
+
+
+</script>
+</html>
